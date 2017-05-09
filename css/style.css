@@ -421,6 +421,7 @@ Parallax
 		text-transform: uppercase;
 		z-index: 200;
 		margin: 0 10% 0 10%;
+		position: relative;
 	}
 	
 	.prlx-author {
@@ -455,7 +456,8 @@ Content
 .one-text {
 	font-size: 20px;
 	line-height: 1.5; 
-    text-align: center;
+    text-align: left;
+	position: relative;
 }
 
 .description {
@@ -527,42 +529,47 @@ Content
     }
 
 	.slider-text {
+		background: rgba(0,0,0,.4);
+		width: 100%;
 		position: absolute;
 		overflow: hidden;
-		bottom: 25%;
-		padding-bottom: 50px;
-		min-height: 220px;
+		bottom: 25%;		
+		
+		left: 0;
+		padding-bottom: 10px;
 	}
 	
 	#slidecaption { 
 		overflow: hidden;
-		float: left;
+		width: 90%;
 		color: white;        
         opacity: 0;
 		filter: alpha(opacity=0);
-        font: 52px/0.9 'Lato', sans-serif;		
-		margin: 0 20px 0 0;
-		line-height: 1.2;		
+        font: 52px/0.9 'Lato', sans-serif;				
+		line-height: 1.2;	
+		padding: 10px 0 10px 50px;			
 	}
 	
 	.slidedescription {
 		font: 500 24px 'TimesNewRoman', serif;
 		line-height: 1.2;	
 		margin: 13px 0 0 0;		
-		border-top: solid white 3px;
+		border-top: solid white 1.5px;
 		font-style: italic;
 	}
 
 	#slidebutton {
-		position: relative; 
-		top: 20px;
+		position: relative;		
 		opacity: 0;
+		left: 0;
+		margin: 15px 0;		
+		padding-left: 50px;
 	}
 	
 	.line {
 		border-bottom: solid white 1px;
 		margin-bottom: 36px;
-		opacity: 0;/*About------------------------------------------*/
+		opacity: 0;
 		filter: alpha(opacity=0);
 	   }	
 	
@@ -657,15 +664,25 @@ Content
 
 	/*Culture------------------------------------------*/
 
-    #culture {
+    #culture {		
 		width: 100%;
-		padding: 25px 20px;				
-		position: relative;        
+		padding: 0 0;								
+		color: white;
+	}    
+
+	.argv {
+		background: url(../images/portfolio/thumbs/image19.jpg);
+		height: 100%; 
+		width: 100%; 
+		padding: 50px 0; 		
 	}
 
-    #culture h4 {
-        text-align: center;        
-    }    
+	.argv:before {
+		content:'';
+		position: absolute;
+		top:0;right:0;bottom:0;left:0;
+		background: rgba(230, 92, 0,.5);
+	}
 
 	.full-width {
 /*		background: #f0f2f5;*/
