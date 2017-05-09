@@ -1873,11 +1873,11 @@ Shortcodes
 
 .overlay-wrp-dark {
 	position: absolute;
-	top: 0px;
+	top: 77%;
 	left: inherit;
 	display: block;
-	height: 338px;
-	width: 25%;
+	height: 100%;
+	width: 100%;
 }
 
 .overlay-wrp-dark .overlay-dark {
