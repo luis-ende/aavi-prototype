@@ -2015,6 +2015,75 @@ Shortcodes
 	background-color: #fff;
 }
 
+.profesor-header-bg {
+	background: url(../images/profesores/galerias/p1/eunice_large1.png);	 
+	background-size: cover;
+	background-position: center center;
+	width: 100%; 	
+	height: 50%;
+	padding: 0 25px; 		
+	position: relative;	
+}
+
+.profesor-header-bg:before {
+	content:'';
+	position: absolute;
+	height: 100%;
+	width: 100%;	
+	top:0;right:0;bottom:0;left:0; /* TODO: Should adjust to container*/
+	background: rgba(230, 92, 0,.4);	
+}
+
+#profesor-perfil {
+	width: 100%;	
+	background-color: #f4f3ef;
+}
+
+.profesor-header-bg1 {
+	background: url(../images/profesores/galerias/p2/AlbertoRios_large3.png);	 
+	background-size: cover;
+	background-position: center center;
+	width: 100%; 	
+	height: 50%;
+	padding: 0 25px; 		
+	position: relative;	
+}
+
+.profesor-header-bg1:before {
+	content:'';
+	position: absolute;
+	height: 100%;
+	width: 100%;	
+	top:0;right:0;bottom:0;left:0; /* TODO: Should adjust to container*/
+	background: rgba(230, 92, 0,.4);	
+}
+
+.profesor-header-bg2 {
+	background: url(../images/profesores/galerias/p3/erin1.png);	 
+	background-size: cover;
+	background-position: center center;
+	width: 100%; 	
+	height: 50%;
+	padding: 0 25px; 		
+	position: relative;	
+}
+
+.profesor-header-bg2:before {
+	content:'';
+	position: absolute;
+	height: 100%;
+	width: 100%;	
+	top:0;right:0;bottom:0;left:0; /* TODO: Should adjust to container*/
+	background: rgba(230, 92, 0,.4);	
+}
+
+#galeria {
+	position: relative;
+	padding: 20px 0 40px 0;
+	color: white;
+	background-color: #eb5e28;
+}
+
 /* Bootstrap Grid
 -------------------------------------------------- */
 
