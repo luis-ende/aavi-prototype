@@ -1960,9 +1960,7 @@ Shortcodes
 
 #perfiles {
 	position: relative;
-	width: 100%;
-	height: 100%;
-	padding-top: 50px;		
+	width: 100%;			
 	background-color: #f4f3ef;
 }
 
@@ -1971,14 +1969,16 @@ Shortcodes
 	background: url(../images/bg/bg1.jpg);
 	height: 100%; 
 	width: 100%; 
-	padding: 0 25px; 	
-	min-height: 640px;	
+	padding: 0 25px; 		
+	position: relative;
 }
 
 .perfiles-bg:before {
 	content:'';
 	position: absolute;
-	top:50px;right:115px;bottom:0;left:115px; /* TODO: Should adjust to container*/
+	height: 100%;
+	width: 100%;	
+	top:0;right:0;bottom:0;left:0; /* TODO: Should adjust to container*/
 	background: rgba(230, 92, 0,.8);	
 }
 
@@ -2011,6 +2011,9 @@ Shortcodes
 	padding-top: 5px;
 }
 
+#profesores-cta {	
+	background-color: #fff;
+}
 
 /* Bootstrap Grid
 -------------------------------------------------- */
