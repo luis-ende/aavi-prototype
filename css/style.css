@@ -53,8 +53,7 @@ Commons
 ::-moz-selection {background: #66615b;color: white; }
 ::selection {background: #66615b;color: white; }
 
-h2 {
-	background: #f4f3ef;
+h2 {	
 	font: 13px 'Open Sans', sans-serif;
 /*	color: #1c1f26;*/
 	-webkit-font-smoothing: antialiased;
@@ -180,11 +179,13 @@ p.lead {
 	line-height: 1.4;
 }
 
+/*
 hr {
 	margin: 25px 0;
 	border: 0;
 	border-bottom: 1px solid #f0f2f5;
 }
+*/
 
 
 
@@ -602,7 +603,7 @@ Content
 
 	.course-detail-title {		
 		display: inline-block;
-		width: 40%;
+		width: 100%;
 		font-size: 12px;
 		font-weight: 600;
 		color: ghostwhite;
@@ -1893,12 +1894,14 @@ Shortcodes
 }
 
 /* --------------------------------------------------------
-TODO: Temporary styles - Detalle de curso
-	-------------------------------------------------------- */
+	TODO: Temporary styles - Detalle de curso
+   -------------------------------------------------------- */
 #header-course {
+	
 	width: 100%;	
 	position: relative;    
-	padding-top: 15px;
+	padding: 20px 15px;
+	background-color: #EB5E28;	
 }
 
 .course-info {
@@ -1950,6 +1953,64 @@ TODO: Temporary styles - Detalle de curso
     background-size:cover;
     background-position: center center;
 }
+
+/* --------------------------------------------------------
+	TODO: Temporary styles - Profesores, Alumnos
+   -------------------------------------------------------- */
+
+#perfiles {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 50px;		
+	background-color: #f4f3ef;
+}
+
+
+.perfiles-bg {
+	background: url(../images/bg/bg1.jpg);
+	height: 100%; 
+	width: 100%; 
+	padding: 0 25px; 	
+	min-height: 640px;	
+}
+
+.perfiles-bg:before {
+	content:'';
+	position: absolute;
+	top:50px;right:115px;bottom:0;left:115px; /* TODO: Should adjust to container*/
+	background: rgba(230, 92, 0,.8);	
+}
+
+.perfil-item {
+	width: 100%; 
+	height: auto; 
+	position: relative; 
+	color: #ffffff; 
+	padding: 5px; 	
+	text-align: center;		
+}
+
+.perfil-item a {	
+	color: white;
+	
+}
+
+.perfil-item img {	
+	width: 120px; 
+	height: 120px; 
+	border-radius: 50%; 
+	background-color: white; 
+	border-color: white; 
+	padding: 4px; 	
+}
+
+.perfil-item h5 {
+	font-family: 'Montserrat', "Helvetica", Arial, sans-serif;		
+	font-size: 85%;
+	padding-top: 5px;
+}
+
 
 /* Bootstrap Grid
 -------------------------------------------------- */

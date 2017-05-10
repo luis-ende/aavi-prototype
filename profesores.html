@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <head>
 	<meta charset="UTF-8">	
 	<meta name="description" content="">
@@ -20,6 +20,12 @@
 	<!-- Icons -->	
 	<link rel="stylesheet" href="css/font-awesome.css">	
 	
+	<!-- CSS Styles -->	
+	<link rel="stylesheet" href="css/style.css">	
+	
+	<!-- Media Queries -->	
+	<link rel="stylesheet" href="css/media.css">					
+	
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>	
 	
 	<!--[if lt IE 9]>
@@ -28,30 +34,227 @@
 </head>
 
 <body>
-  <div>
-    <h1>Profesores</h1>
-    <p>¿Quieres saber más de nuestros profesores? Aquí puedes consultar su perfil y saber más acerca de su trayectoria profesional.</p>
-  </div>
-  
-  <div id="perfiles">
+	<div class="main-nav">
+		<nav class="navbar navbar-ct-black navbar-expand-md" role="navigation">							
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<img class="logo" src="images/logos/logo.png" alt="aavi logo"/>				
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMain" aria-controls="navBarMain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>			
+
+				<div class="collapse navbar-collapse justify-content-md-center" id="navBarMain">
+					<ul class="navbar-nav">
+						<li class="nav-item active"><a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link drowpdown-toggle" href="#" id="escuela-dropdown" data-toggle="dropdown" aria-hashpopup="true" aria-expanded="false">Escuela</a>
+							<div class="dropdown-menu" aria-labelledby="escuela-dropdown">
+								<a class="dropdown-item" href="#">Instalaciones</a>
+								<a class="dropdown-item" href="profesores.html">Profesores</a>
+								<a class="dropdown-item" href="#">Alumnos</a>
+								<a class="dropdown-item" href="#">Becas</a>
+								<a class="dropdown-item" href="#">Servicios</a>
+							</div>					
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Inscripciones</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+					</ul>
+				</div>
+
+				<!-- Search Icon -->	
+				<div class="navbar-search-icon">			
+					<a href="#"><i class="icon-search"></i></a>			
+				</div> 
+			</div>
+			<!-- End Search Icon -->
+		</nav>		
+	</div>		
+		    
+  <div id="perfiles" class="page">	
     <div class="container">
-      <div class="row">
-        <div class="col-xs-1 col-md-2 col-lg-3">
-          <div style="width=25%; height: 120px; position: relative; color: #ffffff; padding: 5px; float: left; "><img style="width: 120px; height: 120px; border-radius: 50%; background-color: #1a1817; padding: 4px; display: block" src="http://aavi.net/Content/images/teachers/ximena.jpg"/></div>
-        </div>
-        <div class="col-xs-1 col-md-2 col-lg-3">
-          <div style="width=25%; height: 120px; position: relative; color: #ffffff; padding: 5px; float: left; "><img style="width: 120px; height: 120px; border-radius: 50%; background-color: #1a1817; padding: 4px; display: block" src="http://aavi.net/Content/images/teachers/ximena.jpg"/></div>
-        </div>
-        <div class="col-xs-1 col-md-2 col-lg-3">
-          <div style="width=25%; height: 120px; position: relative; color: #ffffff; padding: 5px; float: left; "><img style="width: 120px; height: 120px; border-radius: 50%; background-color: #1a1817; padding: 4px; display: block" src="http://aavi.net/Content/images/teachers/ximena.jpg"/></div>
-        </div>
-        <div class="col-xs-1 col-md-2 col-lg-3">
-          <div style="width=25%; height: 120px; position: relative; color: #ffffff; padding: 5px; float: left; "><img style="width: 120px; height: 120px; border-radius: 50%; background-color: #1a1817; padding: 4px; display: block" src="http://aavi.net/Content/images/teachers/ximena.jpg"/></div>
-        </div>
-      </div>
-    </div>
+		<div class="perfiles-bg">
+      	<div class="row">		
+			<div class="col-12" style="color: white; text-align: center">
+				<h2>Profesores</h2>
+				<p>¿Quieres saber más de nuestros profesores? Aquí puedes consultar su perfil y saber más acerca de su trayectoria profesional.</p>
+				<br>
+			</div>		
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+					  <img src="images/profesores/Eunice_Adorno.png"/>				  
+					  <h5>Eunice Adorno</h5>
+				  </a>					  
+			  </div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/Alberto%20Rios.png"/>				  
+				  	<h5>Alberto Ríos</h5> 	  
+				  </a>	
+				</div>				
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/Erin%20perfil.png"/>				  
+				  	<h5>Erin Holland</h5> 	  
+				  </a>	
+				</div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/retrato%20ramiro%20web.jpg"/>				  
+				  	<h5>Ramiro Chaves</h5> 	  
+				  </a>	
+				</div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/retrato%20brenda%20web.jpg"/>				  
+				  	<h5>Brenda Islas</h5> 	  
+				  </a>	
+			  </div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/RGAvCXUx.png"/>				  
+				  	<h5>Rodrigo Alcocer</h5> 	  
+				  </a>	
+				</div>				
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/CerruchaPortraitBW.png"/>				  
+				  	<h5>CERRUCHA</h5> 	  
+				  </a>	
+				</div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/LuisTorres.jpg"/>				  
+				  	<h5>Luis Torres</h5> 	  
+				  </a>	
+				</div>
+			</div>	
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/fabiola.png"/>				  
+				  	<h5>Fabiola Menchelli</h5> 	  
+				  </a>	
+			  </div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/retrato%20victor%20web.jpg"/>				  
+				  	<h5>Victor Deschamps</h5> 	  
+				  </a>	
+				</div>				
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/jacky.png"/>				  
+				  	<h5>Jacky Muniello</h5> 	  
+				  </a>	
+				</div>
+			</div>
+			<div class="col-xs-1 col-md-2 col-lg-3">
+			  <div class="perfil-item">
+				  <a href="#">
+				  	<img src="images/profesores/retrato%20santiago%20web.jpg"/>				  
+				  	<h5>Santiago Ruiseñor</h5> 	  
+				  </a>	
+				</div>
+			</div>			
+		</div>	  	
+    	</div>
+  	</div>
   </div>
   
+	<div id="profesores-cta" class="page">
+		<div class="container" style="padding: 70px; text-align: center">
+			<h5>AAVI se caracteriza por contar con un claustro de profesores amplio y destacado, quienes además de ser maestros son artistas y fotógrafos comerciales en activo. Son más de noventa profesores quienes han impartido clases en las aulas de AAVI, entre los que se encuentran: Pablo Ortiz Monasterio, Javier Ramírez Limón, Yolanda Andrade, León Chiprout, Emilio Chapela y Gonzalo Morales entre otros.</h5>
+		</div>		
+	</div>
+	
+	<!-- Start Footer -->
+    <div id="footer">
+        <div class="container">
+			<div class="row">
+				<div class="col-xs-1 col-sm-6 col-md-3" style="height: 250px"> 
+					<div style="height: 200px; border-right: #404040 1px solid; padding-right: 10px">
+						<a href="#">
+						<img class="logo" src="images/logos/logo.png" alt="aavi logo"/> 
+						<div class="logo-text"> 
+							<p>academia de artes visuales</p>
+						</div>					
+						</a>
+						<br>
+						<p style="text-align: center; font-size: 12px; color: #d9d9d9">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+					</div>                
+				</div>
+				<div class="col-xs-1 col-sm-6 col-md-3" style="height: 250px">
+					<div style="height: 200px; font-size: 12px; color: #d9d9d9; border-right: #404040 1px solid">
+						<h6>Academia de Artes Visuales</h6>
+						<br>
+						<ul style="list-style-type: circle; padding-left: 15px;">
+							<li>Diplomado en fotografía</li>
+							<li>Talleres de video</li>
+							<li>Cursos de fotografía</li>
+							<li>Conócenos</li>
+							<li>Eventos</li>
+							<li>Inscripciones</li>
+							<li>Blog</li>
+							<br>
+							<li>Contacto</li>
+							<li>Aviso de privacidad</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-1 col-sm-6 col-md-3" style="height: 250px">
+					<div style="height: 200px; font-size: 12px; color: #d9d9d9; border-right: #404040 1px solid">
+						<h6>Síguenos en las redes sociales</h6>
+						<ul class="contact-social-icons">
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>						
+							<li><a href="#"><i class="icon-pinterest"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-1 col-sm-6 col-md-3" style="height: 250px">
+						<div style="font-size: 12px; color: #d9d9d9">
+							<h5>AAVI Río Sena</h5>
+							<p style="font-size: 12px; color: #d9d9d9">Río Sena 43 Col. Cuauhtémoc 06500, Ciudad de México, México <br> Tel: 5525 3909 email: <a href="mailto: buzon@aavi.net">buzon@aavi.net</a></p>
+						</div>
+						<br>
+						<div style="font-size: 12px; color: #d9d9d9">
+							<h5>AAVI Bosques</h5>
+							<p style="font-size: 12px; color: #d9d9d9">Bosque de Duraznos 61 Piso 8-B2 Col. Bosque de las Lomas 11700, Ciudad de México, México <br>Tel: 5245 7042 email: <a href="mailto: bosques@aavi.net">bosques@aavi.net</a></p>
+						</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    
+    <div id="footer-legal">
+        <div class = "container">            			
+			<p style="text-align: left; padding: 5px; font-size: 10px;">© Academia de Artes Visuales - AAVI</p>			
+        </div>
+    </div>		
+	<!-- End Footer -->	
+	
   <!-- JavaScripts -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>	
