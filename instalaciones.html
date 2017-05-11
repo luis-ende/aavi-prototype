@@ -20,8 +20,12 @@
 	<!-- CSS JQuery UI -->
 	<link rel="stylesheet" href="css/jquery-ui.css">		
 	
+    <!-- Fancybox -->	
+	<link rel="stylesheet" href="css/jquery.fancybox.css">      
+  
 	<!-- Icons -->	
 	<link rel="stylesheet" href="css/font-awesome.css">	
+      
 	
 	<!-- CSS Styles -->	
 	<link rel="stylesheet" href="css/style.css">	
@@ -113,27 +117,29 @@
 					</p>
 				</div>
 				<div class="col-xs-1 col-md-4">
-					<img style="width: 100%; margin-bottom: 10px;" src="images/instalaciones/sede_aavi.jpg"/>					
+					<img style="width: 100%; margin-bottom: 10px;" src="images/instalaciones/sede_aavi.jpg"/>
 					<div id="tabs">
 						<ul>
 							<li><a href="#tabs-1">Río Sena</a></li>
 							<li><a href="#tabs-2">Bosques</a></li>
 						</ul>
 						<div id="tabs-1">
+                            <div>
 							<ul> <!-- TODO: Implement fancybox class -->
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/riosena01.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/riosena02.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/riosena03.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/riosena06.jpg"/></a></li>
+								<li><a href="images/instalaciones/riosena01.jpg" class="fancybox" rel="group10" title="Río Sena"><img style="width: 100%" src="images/instalaciones/riosena01.jpg" alt="Río Sena"/></a></li>
+								<li><a href="images/instalaciones/riosena02.jpg" class="fancybox" rel="group10" title="Río Sena"><img style="width: 100%" src="images/instalaciones/riosena02.jpg" alt="Río Sena"/></a></li>
+								<li><a href="images/instalaciones/riosena03.jpg" class="fancybox" rel="group10" title="Río Sena"><img style="width: 100%" src="images/instalaciones/riosena03.jpg" alt="Río Sena"/></a></li>
+								<li><a href="images/instalaciones/riosena06.jpg" class="fancybox" rel="group10" title="Río Sena"><img style="width: 100%" src="images/instalaciones/riosena06.jpg" alt="Río Sena"/></a></li>
 							</ul>
+                            </div>
 						</div>
 						<div id="tabs-2">
 							<ul> <!-- TODO: Implement fancybox class -->
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/bosques01.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/bosques02.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/bosques03.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/bosques04.jpg"/></a></li>
-								<li><a href="#"><img style="width: 100%" src="images/instalaciones/bosques05.jpg"/></a></li>		
+								<li><a href="images/instalaciones/bosques01.jpg" class="fancybox" rel="group11" title="Bosques"><img style="width: 100%" src="images/instalaciones/bosques01.jpg"/></a></li>
+								<li><a href="images/instalaciones/bosques02.jpg" class="fancybox" rel="group11" title="Bosques"><img style="width: 100%" src="images/instalaciones/bosques02.jpg"/></a></li>
+								<li><a href="images/instalaciones/bosques03.jpg" class="fancybox" rel="group11" title="Bosques"><img style="width: 100%" src="images/instalaciones/bosques03.jpg"/></a></li>
+								<li><a href="images/instalaciones/bosques04.jpg" class="fancybox" rel="group11" title="Bosques"><img style="width: 100%" src="images/instalaciones/bosques04.jpg"/></a></li>
+								<li><a href="images/instalaciones/bosques05.jpg" class="fancybox" rel="group11" title="Bosques"><img style="width: 100%" src="images/instalaciones/bosques05.jpg"/></a></li>		
 							</ul>
 						</div>						
 					</div>
@@ -143,22 +149,22 @@
 					<br>
 					<dl>
 						<dt>Ricardo Trabulsi</dt>
-						<dd>Fundador. Dirección General</dd>
+						<dd style="margin-bottom: 10px">Fundador. Dirección General</dd>
 						<dt>Beatriz Díaz</dt>
 						<dd>Dirección Académica</dd>
-						<dd>beatriz@aavi.net</dd>
+						<dd style="margin-bottom: 10px"><a href="mailto: beatriz@aavi.net">beatriz@aavi.net</a></dd>
 						<dt>Hilda Luna</dt>	
  						<dd>Administración</dd>
-						<dd>hilda@aavi.net</dd>
+						<dd style="margin-bottom: 10px"><a href="mailto: hilda@aavi.net">hilda@aavi.net</a></dd>
 						<dt>Leo Zepeda</dt>
 						<dd>Comunicación</dd>
-						<dd>comunicacion@aavi.net</dd>
+						<dd style="margin-bottom: 10px"><a href="mailto: comunicacion@aavi.net">comunicacion@aavi.net</a></dd>
 						<dt>Iedany García</dt> 
 						<dd>Coordinación AAVI Bosques</dd>
-						<dd>bosques@aavi.net</dd>
+						<dd style="margin-bottom: 10px"><a href="mailto: bosques@aavi.net">bosques@aavi.net</a></dd>
 						<dt>Juan Carlos Rosas</dt>
 						<dd>Coordinación de Instalaciones y Equipo</dd>
-						<dd>jc@aavi.net</dd>						
+						<dd style="margin-bottom: 10px"><a href="mailto: jc@aavi.net">jc@aavi.net</a></dd>						
 					</dl>
 				</div>
 			</div>
@@ -234,10 +240,12 @@
   <!-- JavaScripts -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>	
-	<script src="js/bootstrap.min.js"></script>
-	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	
+	<script src="js/bootstrap.min.js"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>	
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	  
+    <script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/jquery.fancybox-media.js"></script>	    
+  
 	<script>
 		$( function() {
 			$( "#tabs" ).tabs({
@@ -245,4 +253,38 @@
 			});
 		} );
   	</script>
+  
+    <script>
+		$(document).ready(function() {
+			$(".fancybox").fancybox({
+				padding : 0,
+				beforeShow: function () {
+				
+							this.title = $(this.element).attr('title');
+							this.title = '<h4>' + this.title + '</h4>' + $(this.element).find('img').attr('alt');
+							
+    
+				            if (this.title) {
+				                // New line
+				                this.title += '<br />';
+				                				                
+				            }
+				        },
+		        afterShow: function() {
+		            // Render tweet button
+		            twttr.widgets.load();
+		        },
+				helpers : {
+					title : { type: 'inside' },
+				}
+			});
+			$('.fancybox-media').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+				helpers : {
+					media : {},
+				}
+			});
+		});
+	</script>  
 </body>
