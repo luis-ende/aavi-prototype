@@ -1961,7 +1961,7 @@ Shortcodes
 #perfiles {
 	position: relative;
 	width: 100%;			
-	background-color: #f4f3ef;
+	background-color: #f4f3ef;	
 }
 
 
@@ -1969,7 +1969,7 @@ Shortcodes
 	background: url(../images/bg/bg1.jpg);
 	height: 100%; 
 	width: 100%; 
-	padding: 0 25px; 		
+	padding: 15px 25px; 		
 	position: relative;
 }
 
@@ -2082,6 +2082,10 @@ Shortcodes
 	padding: 20px 0 40px 0;
 	color: white;
 	background-color: #eb5e28;
+}
+
+#escuela-header {
+	
 }
 
 /* Bootstrap Grid
