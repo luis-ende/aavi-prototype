@@ -2108,3 +2108,13 @@ Shortcodes
     padding-left: 0;
   }
 }
+
+/* JQuery UI Tabs
+-------------------------------------------------- */
+
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active {
+	border-color: #ff3300;
+	background: #eb5e28;		
+}
