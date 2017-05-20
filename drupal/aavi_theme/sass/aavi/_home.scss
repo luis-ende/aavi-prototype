@@ -1,0 +1,151 @@
+/* Sección Cursos destacados */
+
+#destacados {
+	position: relative;
+	width: 100%;	
+}
+
+.curso {	
+}
+
+.curso .curso-info {
+	position: relative; 
+	bottom: 85px; 
+	padding-left: 15px;    
+    padding-right: 15px;
+	color: white; 
+	width: 100%;
+    height: auto;
+}
+
+.curso .curso-info>a {
+  color: white;  
+ } 
+
+.curso .curso-info>a>p {
+  margin: 0;  
+  padding: 0;
+ } 
+
+.curso img {
+    min-width: 100%;
+	min-height: 100%;
+	width: 100%;
+	height: 338px; 
+	margin: 0;
+	border: 0;	
+}
+
+.curso-titulo {		
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    color: ghostwhite;
+    text-transform: uppercase;				
+}
+
+.curso-desc {		
+    font-size: 12px;		
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+}  
+
+.overlay-wrp-dark {
+	position: absolute;
+	top: 74%;
+	left: inherit;
+	display: block;
+	height: 27%;
+	width: 100%;
+}
+
+.overlay-wrp-dark .overlay-dark {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	height: 100%;
+	width: 100%;
+}
+
+.overlay-dark {
+    background: black;
+}
+
+/* Sección Argumento de venta */
+
+#culture {		
+    width: 100%;
+    padding: 0 0;								
+    color: white;
+}
+
+.argv {    
+    height: 100%; 
+    width: 100%; 
+    padding: 50px 0; 		
+}
+
+.argv:before {
+    content:'';
+    position: absolute;
+    top:0;right:0;bottom:0;left:0;
+    background: rgba(230, 92, 0,.5);
+}
+
+.argv-text {
+    width: 50%; 
+    margin-left: 20px; 
+    padding: 30px 0;
+	font-size: 20px;
+	line-height: 1.5; 
+    text-align: left;
+	position: relative;  
+    color: white;
+}
+
+/* Sección Programas (Secciones AAVI) */
+
+.seccion-item {	
+}
+
+.seccion-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -khtml-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);                
+}
+
+.seccion-caption>h5 {        
+    color: #f1f1f1;
+    font-weight: 900;
+    text-transform: uppercase;        
+    border: 4px solid #f1f1f1;
+    width: 85%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+ }   
+
+/* Commons */
+
+.box-item {
+	width: 100%; 
+	height: 338px; 		
+	padding: 0;	
+	border: 0;
+	overflow: hidden;
+}
+
+img.scaleimg {
+	width: 100%;
+    height: 100%;
+}

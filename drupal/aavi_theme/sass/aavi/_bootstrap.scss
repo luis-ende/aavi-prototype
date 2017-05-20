@@ -1,0 +1,22 @@
+/* Bootstrap Grid
+-------------------------------------------------- */
+
+.container-fluid {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.row.no-gutters,
+.content.no-gutters,
+.wrapper-content.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

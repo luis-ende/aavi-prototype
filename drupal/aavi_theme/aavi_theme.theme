@@ -1,0 +1,260 @@
+<?php
+
+/**
+ * @file
+ * Contains theme override functions and preprocess functions
+ */
+
+use Drupal\Core\Template\RenderWrapper;
+use Drupal\Core\Template\Attribute;
+use Drupal\search\Form\SearchBlockForm;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\system\Form\ThemeSettingsForm;
+use Drupal\file\Entity\File;
+use Drupal\Core\Url;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+use Drupal\block_content\Entity\BlockContent;
+
+/**
+ * Implements hook_preprocess_page() for block templates.
+ */
+
+function aavi_theme_preprocess_page(&$variables) {      
+  //dump($variables['node']->get('body')[0]->get('summary'));
+  
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['contentlayout'] = 'col-md-6';
+    $variables['sidebarfirst'] = 'col-md-3';
+    $variables['sidebarsecond'] = 'col-md-3';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['contentlayout'] = 'col-md-9 ';
+    $variables['sidebarfirst'] = 'col-md-3';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['contentlayout'] = 'col-md-9';
+    $variables['sidebarsecond'] = 'col-md-3';
+  }
+  else {
+    $variables['contentlayout'] = 'col-md-12';
+  }
+
+  // Social media global variable.
+  $variables['show_social_icon'] = theme_get_setting('show_social_icon');
+  $variables['facebook_url'] = theme_get_setting('facebook_url');  
+  $variables['twitter_url'] = theme_get_setting('twitter_url');  
+  $variables['instagram_url'] = theme_get_setting('instagram_url');
+  $variables['rss_url'] = theme_get_setting('rss_url');
+  $variables['show_credit_link'] = theme_get_setting('show_credit_link');
+
+  //To get the current url
+  $current_url  = \Drupal::request()->getRequestUri();
+  $current_path = explode("/", $current_url);
+  if (isset($current_path[2])) {
+    $variables['current_path'] = $current_path[2];
+  }  
+  
+  // Slider
+  // Asign Variable for Slider
+  if ($variables['is_front']) {
+    if (theme_get_setting('show_slideshow','aavi_theme') == 1) {
+      $variables['show_slideshow'] = 1;
+      $variables['slider_content'] = aavi_theme_get_slider_content();
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function aavi_theme_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__main') { // We're doing that for main menu.
+    // Get the current path.
+    $current_path = \Drupal::request()->getRequestUri();
+    $items = $variables['items'];
+    foreach ($items as $key => $item) {
+      // If path is current_path, set active to li.
+      if ($item['url']->toString() == $current_path) {
+      // Add active link.
+      $variables['items'][$key]['attributes']['class'] = 'active';
+      }
+    }
+  }
+}
+
+/**
+ * Slider
+ * Implements custom function for get slider content.
+ */
+function aavi_theme_get_slider_content() {
+  $slider_content = array();
+  for ($i = 1; $i <= theme_get_setting('no_of_slides'); $i++) {
+    $fid = theme_get_setting('slide_image_path'.$i,'aavi_theme');
+    if (!empty($fid)) {
+      $file = file_load($fid[0]);
+      $uri = $file->getFileUri();
+      $path = file_create_url($uri);
+    }
+    else {
+      $path = base_path() . drupal_get_path('theme', 'aavi_theme') . theme_get_setting('slide_image_path_' . $i, 'aavi_theme');
+    }
+    $slider_content[$i] = '<li>
+      <img src="' . $path . '" alt="Slider Banner" />
+      <div class="slider-caption">
+        <h2 class="slider-title">' . theme_get_setting('slide_title_' . $i, 'aavi_theme').'</h2>
+        <div class="clearfix"><p class="slider-description">' . theme_get_setting('slide_description_' . $i, 'aavi_theme').'</p></div>
+        <a href=' . theme_get_setting('slide_url_' . $i, 'aavi_theme') . ' class="btn btn-danger btn-fill">Saber más</a>
+      </div>
+    </li>';
+  }
+  return $slider_content;
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function aavi_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  $form['aavi_theme_info'] = array(
+    '#markup' => '<h2><br/>Advanced Theme Settings</h2><div class="messages messages--warning">Clear cache after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cashe</a></div>'
+  );
+
+  //Social Icon Link
+  $form['aavi_theme_settings']['social_icon'] = array(
+    '#type' => 'details',
+    '#title' => t('Social Media Link'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['aavi_theme_settings']['social_icon']['show_social_icon'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Social Icons'),
+    '#default_value' => theme_get_setting('show_social_icon'),
+    '#description'   => t("Show/Hide Social media links"),
+  );
+  $form['aavi_theme_settings']['social_icon']['facebook_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook URL'),
+    '#default_value' => theme_get_setting('facebook_url'),
+  );  
+  $form['aavi_theme_settings']['social_icon']['twitter_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter URL'),
+    '#default_value' => theme_get_setting('twitter_url'),
+  );  
+  $form['aavi_theme_settings']['social_icon']['instagram_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Instagram URL'),
+    '#default_value' => theme_get_setting('instagram_url'),
+  );
+  $form['aavi_theme_settings']['social_icon']['rss_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('RSS URL'),
+    '#default_value' => theme_get_setting('rss_url'),
+  );
+
+  // Custom submit to save the file permenant.
+  // $form['#submit'][] = 'aavi_theme_settings_form_submit';
+
+  //Show/Hide credit
+  $form['aavi_theme_settings']['credit_link'] = array(
+    '#type' => 'details',
+    '#title' => t('Footer Credit Link'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['aavi_theme_settings']['credit_link']['show_credit_link'] = array(
+    '#type' => 'checkbox',
+    '#title' => t("Show/Hide 'Designed by Zymphonies' credit text"),
+    '#default_value' => theme_get_setting('show_credit_link'),
+    '#description'   => t("Highly recomend to display credit in footer"),
+  );
+  //Slide show config 
+  $form['aavi_theme_settings']['slideshow'] = array(
+    '#type' => 'details',
+    '#title' => t('Front Page Slideshow'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['aavi_theme_settings']['slideshow']['no_of_slides'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Number of slides'),
+    '#default_value' => theme_get_setting('no_of_slides'),
+    '#description'  => t("Enter the number of slides required & Save configuration"),
+    '#markup' => '<div class="messages messages--warning">Clear caches after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cashe</a></div>',
+  );
+  $form['aavi_theme_settings']['slideshow']['show_slideshow'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Slideshow'),
+    '#default_value' => theme_get_setting('show_slideshow'),
+    '#description'   => t("Show/Hide Slideshow in home page"),
+  );
+  $form['aavi_theme_settings']['slideshow']['slide'] = array(
+    '#markup' => t('Change the banner image, title, description and link using below fieldset'),
+  );
+  for ($i = 1; $i <= theme_get_setting('no_of_slides'); $i++) {
+    $form['aavi_theme_settings']['slideshow']['slide' . $i] = array(
+      '#type' => 'details',
+      '#title' => t('Slide '.$i),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['aavi_theme_settings']['slideshow']['slide' . $i]['slide_image_path' . $i] = array(
+      '#type' => 'managed_file',
+      '#title' => t('Slide '.$i.' Image'),
+      '#default_value' => theme_get_setting('slide_image_path'.$i,'aavi_theme'),
+      '#upload_location' => 'public://',
+    );
+    $form['aavi_theme_settings']['slideshow']['slide' . $i]['slide_title_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' Title'),
+      '#default_value' => theme_get_setting('slide_title_' . $i,'aavi_theme'),
+    );
+    $form['aavi_theme_settings']['slideshow']['slide' . $i]['slide_description_' . $i] = array(
+      '#type' => 'textarea',
+      '#title' => t('Slide '.$i.' Description'),
+      '#default_value' => theme_get_setting('slide_description_' . $i,'aavi_theme'),
+    );    
+    $form['aavi_theme_settings']['slideshow']['slide' . $i]['slide_url_' . $i] = array(
+      '#type' => 'textfield',
+      '#title' => t('Slide '.$i.' URL'),
+      '#default_value' => theme_get_setting('slide_url_' . $i,'aavi_theme'),
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function aavi_theme_preprocess_breadcrumb(&$variables){
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = array(
+     'text' => $node->getTitle(),
+     'url' => $node->URL()
+   );
+  }
+}
+
+function aavi_theme_preprocess_block(&$variables){      
+//    if (isset($variables['elements']['content']['field_secciones'])) {
+//    $secciones = $variables['elements']['content']['field_secciones'];    
+    // TODO: To test with Twig too
+    
+    //for ($i = 0; $i <= 3; $i++) {
+      //$seccionEntity = $secciones[$i]['#options']['entity'];      
+      //echo $i;      
+      //dump($seccionEntity->field_titulo->value);      
+      //dump($seccionEntity->field_enlace[0]->uri);
+      //dump($seccionEntity->field_enlace[0]->title);      
+      //dump($seccionEntity->field_imagen_de_fondo[0]->entity->url()); 
+      //dump($seccionEntity->field_cta->value);            
+
+      //$variables['landing_page_secciones'][i] = ['field_cta' => $seccionEntity->field_cta->value];
+      //$variables['landing_page_secciones'][i] = ['field_cta' => $seccionEntity->field_cta->value];
+      //$variables['landing_page_secciones'][i] = ['field_cta' => $seccionEntity->field_cta->value];
+    //}                    
+//  }  
+}

@@ -562,7 +562,7 @@ Content
 		font-size: 12px;
 		font-weight: 600;
 		color: ghostwhite;
-		text-transform: uppercase;
+		text-transform: uppercase;        
 	}
 	
 	.course-description {		
@@ -1801,7 +1801,7 @@ Shortcodes
 	bottom: 75px; 
 	left: 15px; 
 	color: white; 
-	width: 100%;
+	width: 100%;    
 }
 
 .overlay-wrp-dark {
@@ -1849,12 +1849,7 @@ TODO: Temporary styles - Detalle de curso
 	border: 0;	
 }
 
-.course-buttons {		
-	display: inline-block;	
-	padding: 5px 0 5px 0;
-	width: auto;
-	z-index: 100000;
-}
+
 
 .course-buttons a {
 	font-size: 12px;

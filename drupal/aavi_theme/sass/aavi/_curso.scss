@@ -1,0 +1,66 @@
+.curso-header {	
+  width: 100%;	
+  position: relative;    
+  padding: 20px 15px;
+  background-color: #EB5E28;	
+}
+
+.curso-img {
+  padding-right: 15px
+}
+
+.curso-img img {
+  height: 100%; width: 100%;
+}
+
+.curso-nombre {		
+  display: inline-block;
+  width: 100%;
+  color: ghostwhite;
+  text-transform: uppercase;
+  font-size: 12px;        
+}
+
+.curso-sumario {
+  font-size: 12px; color: white;
+  margin-top: 10px;
+}
+
+.curso-clase {
+  background-color: white; 
+  margin-top: 15px; 
+  padding: 20px; 
+  font-size: 75%;
+}
+
+.curso-clase-row {
+  margin-bottom: 7px;
+}
+
+.clase-label {
+  float: left; 
+  font-weight: bold; 
+  margin-right: 5px;
+}
+
+.clase-lugares {
+  color: red;
+}
+
+.curso-precio {  
+  display: block;
+  font-weight: bold; 
+  margin-right: 5px;  
+}
+
+.curso-buttons {		
+  display: inline-block;	
+  padding: 5px 0 5px 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+.curso-button {
+  font-size: 26px;
+  margin-bottom: 10px;
+}

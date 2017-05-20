@@ -1,0 +1,23 @@
+{# View Cursos destacados #}
+
+<div class="wrapper-content no-gutters">
+  <div class="col-xs-1 col-sm-6 col-md-3">
+    <div class="curso box-item">
+      <a href="#">
+        {% if field_imagen %}
+        <img src="{{ field_imagen }}" alt="{ title }} "/>	  		                  
+        <div class="overlay-wrp-dark">                              
+          <div class="overlay-dark"></div>
+        </div>		
+        {% endif %}
+        <div class="curso-info">
+          <a href="#">
+            <p class-curso-titulo>{{ title }}</p>
+            <p class="curso-desc">{{ field_fecha_inicio }} - {{ field_fecha_fin }} </p> 
+            <p class="curso-desc">{{ field_hora_de_inicio }} - {{ field_hora_final }} Hrs. </p>				
+          </a>
+        </div>			
+      </a>
+    </div>
+  </div>
+</div>

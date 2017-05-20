@@ -1,0 +1,54 @@
+name: AAVI Theme
+type: theme
+base_theme: classy
+description: Default Theme for AAVI
+package: themes
+core: 8.x
+screenshot: screenshot.png
+
+libraries:
+  - aavi_theme/bootstrap
+  - aavi_theme/flexslider
+  - aavi_theme/fontawesome
+  - aavi_theme/smartmenus
+  - aavi_theme/global-components  
+
+stylesheets-remove:
+
+regions:
+
+  #Header
+  header: 'Header'    
+  primary_menu: 'Menú principal'    
+  
+  #Home Page AAVI
+  cursos_destacados: 'Sección Cursos destacados' 
+  mensaje_inicio: 'Sección Mensaje principal' 
+  diplomado: 'Sección Diplomado'
+  programas: 'Sección Programas'  
+  arg_venta: 'Sección Argumento de venta AAVI'
+  cursos_proximos: 'Sección Cursos próximos'
+
+  #Global Region
+  highlighted: 'Mensajes de sistema' 
+  page_title: 'Título'
+  breadcrumb: 'Breadcrumb'
+  content: 'Contenido'
+  sidebar_first: 'Barra lateral izquierda'
+  sidebar_second: 'Barra lateral derecha'  
+
+  #Contacto
+  mapa_ubicacion: 'Mapa'
+  contacto: 'Contacto'
+
+  #Footer 1
+  footer_aavi: 'Sección mensaje AAVI de pie de página'
+  footer_menu: 'Sección Menú de pie de página'
+  seccion_social: 'Sección Redes sociales'
+  seccion_sedes: 'Sección Sedes AAVI'
+  
+  #Footer 2
+  aviso_legal: 'Aviso legal'
+  aviso_tc: 'Referencia Tierra Común'
+
+  auto_hidden_block: 'Auto hidden blocks'

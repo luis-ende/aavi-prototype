@@ -1,0 +1,57 @@
+/** 
+	* Filename:     global.css
+	* Version:      1.0.0 (15-05-2017)
+	* Website:      http://aavi.net
+	* Description:  Global Styles
+	* Author:		Development Team
+					tierracomun.org
+**/
+
+// Import external libraries.
+@import "compass";
+@import 'modular-scale';
+@import "singularitygs";
+@import "breakpoint";
+
+// Import sass partials
+//@import "default/variables-and-mixins";
+//@import "default/base";
+//@import "default/typhography";
+//@import "default/global-styles";
+//@import "default/home.scss";
+//@import "default/header";
+//@import "default/slider";
+//@import "default/menu";
+//@import "default/demo";
+//@import  "default/pages";
+
+@import "ct-paper/variables";
+@import "ct-paper/mixins";
+
+//@import "ct-paper/typography";
+
+// Core CSS
+@import "ct-paper/misc";
+@import "ct-paper/buttons";
+//@import "ct-paper/inputs";
+//@import "ct-paper/progress-bars";
+//@import "ct-paper/sliders";
+//@import "ct-paper/alerts";
+//@import "ct-paper/labels";
+//@import "ct-paper/tooltips-and-popovers";
+//@import "ct-paper/sections";
+//@import "ct-paper/checkbox-radio";
+//@import "ct-paper/navbars";
+//@import "ct-paper/images";
+
+@import "aavi/variables-and-mixins";
+@import "aavi/global-styles";
+@import "aavi/typography";
+@import "aavi/bootstrap";
+@import "aavi/home.scss";
+@import "aavi/header";
+@import "aavi/footer";
+@import "aavi/slider";
+@import "aavi/menu";
+@import "aavi/pages";
+@import      "aavi/curso"; 

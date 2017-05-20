@@ -1,0 +1,22 @@
+#footer {
+    width: 100%;
+    height: auto;		
+    background-color: #1a1817;		
+    position: relative;
+    padding: 25px;
+}
+
+#footer-legal {
+    position: relative;
+    background-color: #0f0f0a;
+    padding: 0;        
+    margin-top: -10px; /* TODO: Hack */
+}
+
+.contact-social-icons {
+    text-align: center;
+    position: relative;
+    top: 30px;
+    left: 0;
+    width: 100%;
+}
