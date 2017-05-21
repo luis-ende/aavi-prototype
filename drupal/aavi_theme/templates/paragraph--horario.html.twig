@@ -46,15 +46,31 @@
   ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}    
-        <li>{{ content.field_dias_de_clase }} {{ content.field_hora_de_inicio }} - {{ content.field_hora_final }}</li>
+  <div{{ attributes.addClass(classes) }}>    
+    {% if content.field_dias_de_clase %}          
+      {% set dias_clase = content.field_dias_de_clase.0['#markup'] %}
+      {% set num_dias = paragraph.field_dias_de_clase|length %}
+      {% if num_dias > 1 %}        
+        {% if num_dias > 3 %}
+          
+        {% endif %}
     
-        <div class="curso-clase-row">
-          <span class="clase-label">Sede:</span>
-          <span>{{ content.field_sede }}</span>
-        </div>        
-      </div>      
+        {% set dias_clase = '' %}        
+        {% for i in 0..num_dias-1 %}
+          {% set last_and = loop.revindex0 == 1 ? ' y ' : ', ' %}
+          {% set last = loop.last ? '' : last_and %}
+          {% set dias_clase = dias_clase ~ content.field_dias_de_clase[i]['#markup'] ~ last %} 
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+        
+    {% block content %}                     
+      <li> {{ dias_clase }} de {{ content.field_hora_de_inicio.0['#context'].value }} a {{ content.field_hora_final.0['#context'].value }} Hrs. </li>
+
+      <div>                      
+        <span class="clase-label">Sede:</span>
+        <span>{{ content.field_sede }}</span>
+      </div>              
     {% endblock %}
   </div>
-{% endblock paragraph %}
+{% endblock %}
