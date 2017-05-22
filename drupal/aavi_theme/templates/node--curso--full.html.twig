@@ -74,38 +74,18 @@
   ]
 %}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="comment-submitted">
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-  
+<article{{ attributes.addClass(classes) }}>    
   <div{{ content_attributes.addClass('node__content') }}>      
-  <!-- Begin Header Course -->	        	
+  <!-- Begin Header Curso -->	        	
     <div class="curso-header page-section">
       <div class="container">
-          <div class="row no-gutters">
-            
-                                      
-              <div class="col-xs-1 col-md-7">
-                  <div class="curso-img">
+          <div class="row no-gutters">                                                  
+              <div class="col-xs-12 col-md-7">
+                  <div class="curso-img-box">
                     {{ content.field_imagen }}
                   </div>				
               </div>
-              <div class="col-xs-1 col-md-4">					
+              <div class="col-xs-12 col-md-4">					
                   <div class="curso-nombre">
                     <h4>{{ label }}</h4>                    
                   </div>				
@@ -114,49 +94,68 @@
                   </div>                  
                   <div class="curso-clase">                     
                     <div>{{ content.field_clases.0 }}</div>
-                    
-<!--
-                    <div class="curso-clase-row">
-                      <span class="clase-label">Fechas:</span>                      
-                      <span>{{ content.field_clases.0['#paragraph'].field_fecha_inicio.0.value }} - {{ content.field_clases.0['#paragraph'].field_fecha_fin.0.value }}</span>
-                    </div>
-
-                    <div class="curso-clase-row">
-                      <span class="clase-label">Horario:</span>
-                      <span>martes de 19 a 22 hrs</span>
-                    </div>
-
-                    <div class="curso-clase-row">
-                      <span class="clase-label">Duración:</span>
-                      <span>12  hrs.</span>
-                    </div>
-
-                    <div class="curso-clase-row">
-                      <span class="clase-label">Sede:</span>
-                      <span><a href="#">Río Sena</a></span>
-                    </div>
-
-                    <div class="curso-clase-row">
-                      <span class="clase-label">Imparte:</span>
-                      <span><a href="">Ximena Zermeño</a></span>
-                    </div>
-
-                    <div class="curso-clase-row">
-                      <span class="clase-lugares">2</span><span> lugares disponibles</span>
-                    </div>
--->                    
+                          
                     <a href="#" class="btn btn-danger btn-fill">Inscripción y pago</a>                    
                   </div>					
               </div>
-              <div class="col-xs-1 col-md-1">					
+              <div class="col-xs-12 col-md-1">					
                   <div class="curso-buttons">
-                    <div class="curso-button"><a style="font-size: 26px;" href="#" class="btn btn-danger btn-fill"><i class="glyphicon-file"></i></a></div>
-                    <div class="curso-button"><a style="font-size: 26px;" href="#" class="btn btn-danger btn-fill"><i class="glyphicon-info-sign"></i></a></div>
+                    <div class="curso-button"><a style="font-size: 20px;" href="#" class="btn btn-danger btn-fill"><i class="glyphicon-file"></i></a></div>
+                    <div class="curso-button"><a style="font-size: 20px;" href="#" class="btn btn-danger btn-fill"><i class="glyphicon-info-sign"></i></a></div>
                   </div>						
               </div>
           </div>
       </div>	 
-  </div>
-  <!-- End Header Course -->	          
+    </div>
+  <!-- End Header Curso -->	        	
+    
+  <!-- Begin Detalle Curso -->	  
+    <div class="curso-detalle page">
+		<div class="container">										
+            <br>
+            <p style="font-size: 75%">Tópicos:</p>
+            <div>
+                <ul>
+                    <li style="display: inline; border: 2px solid white; background-color: gray; color: white; font-size: 75%; padding: 3px;">Fotografía</li>
+                    <li style="display: inline; border: 2px solid white; background-color: gray; color: white; font-size: 75%; padding: 3px;">Profesional</li>
+                    <li style="display: inline; border: 2px solid white; background-color: gray; color: white; font-size: 75%; padding: 3px;">Comercial</li>
+                </ul>				
+            </div>				
+
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active" id="tab1" class="current">Detalles</li>
+                    <li id="tab2">Requisitos</li>
+                    <li id="tab3">Contenidos</li> 
+                </ul>
+
+                <div class="tab-content-wrp">
+                    <div id="tab1-content" class="tab-content active" style="height: 440px">
+                        <p>Créditos: 6</p>
+                        <p>Dirigido a: Estudiantes de AAVI, autodidactas y estudiantes de fotografía de otras escuelas que cumplan los requerimientos de nivel.</p>
+                        <p>Servicios: Horario libre de instalaciones</p>
+                        <br>
+                        <br>
+                        <br>
+                        <div style="height: 180px; position: relative; color: #ffffff; padding: 25px 15px; display: block; float: left"><img style="width: 120px; height: 130px; border-radius: 50%; border-color: gray; background-color: #1a1817" src="http://aavi.net/Content/images/teachers/ximena.jpg"/></div>
+                        <div style="height: 180px; width: 100%; max-height: 180px; position: relative; padding: 25px 0 15px 0; margin-left: 10px; display: block">
+                            <h5>Ximena Zermeño</h5>
+                            <p style="font-size: 12px">Estudió Derecho en el Instituto Superior de Ciencias Jurídicas y decidió inclinarse por el derecho penal, el cual litigo durante 8 años. A la par de dedicarse al mundo de la abogacía, Ximena no abandonó nunca  su instinto sensible, ni su necesidad de expresarlo en el arte, Estudió fotografía en la Academia de Artes visuales (Aavi)... <a href="#">Leer más</a></p>
+                        </div>														
+                    </div>
+
+                    <div id="tab2-content" class="tab-content"  style="height: 440px">
+                        <p>Haber concluido el curso avanzado de fotografía en AAVI o equivalente / Llenar formato de inscripción / Cámara DSLR / Pago de colegiatura.</p>							
+                    </div>
+
+                    <div id="tab2-content" class="tab-content"  style="height: 440px">
+                        <p>Este taller propone a los estudiantes distintas formas de abordar los eventos para desarrollar una visión de autor al tiempo que se complace a los clientes.</p>
+                    </div>
+                </div>
+            </div>				
+		</div>
+	</div>   
+  <!-- End Detalle Curso -->	  
+    
   </div>
 </article>

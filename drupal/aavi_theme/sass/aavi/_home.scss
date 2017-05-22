@@ -149,3 +149,16 @@ img.scaleimg {
 	width: 100%;
     height: 100%;
 }
+
+/*Front Page*/
+
+.path-frontpage .feed-icon{
+  display: none;
+}
+
+.path-frontpage .content_layout{
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 20px 0;
+	overflow: hidden;
+}

@@ -43,7 +43,7 @@
     <div class="content no-gutters">            
       {% for i in 1..4 %}        
       {% set entity = content.field_secciones[loop.index0]['#options']['entity'] %}                
-        <div class="col-xs-1 col-sm-6 col-md-3">                
+        <div class="col-xs-12 col-sm-6 col-md-3">                
           <a href="{{ entity.field_enlace[0].uri }}">                          
             <div class="seccion-item box-item">                                
               <img class="scaleimg" src="{{ file_url(entity.field_imagen_de_fondo[0].entity.uri.value) }}" alt="{{ entity.field_titulo.value }}" />

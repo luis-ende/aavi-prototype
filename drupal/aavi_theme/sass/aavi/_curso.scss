@@ -5,12 +5,12 @@
   background-color: #EB5E28;	
 }
 
-.curso-img {
+.curso-img-box {
   padding-right: 15px
 }
 
-.curso-img img {
-  height: 100%; width: 100%;
+.curso-img-box img {
+  height: 440px; width: 100%;
 }
 
 .curso-nombre {		
@@ -57,10 +57,16 @@
   display: inline-block;	
   padding: 5px 0 5px 5px;
   width: auto;
+  height: 100%;
   z-index: 100000;
 }
 
 .curso-button {
-  font-size: 26px;
+  font-size: 16px;
   margin-bottom: 10px;
+}
+
+.curso-detalle {
+	padding-top: 0;
+	padding-bottom: 0;
 }
